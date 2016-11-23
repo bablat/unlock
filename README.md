@@ -1,6 +1,6 @@
 # unlock
 
-Requirements:
+## Requirements:
 
-/secure/mounted file inside encrypted volume
-sudoers.d configuration allowing sudo commands to run
+1. `/secure/mounted` file inside encrypted volume
+2. `/etc/sudoers.d/unlock` configuration allowing sudo commands to run
