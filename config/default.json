@@ -1,0 +1,9 @@
+{
+  "cmd_success": "sudo cryptsetup status securebackup ; echo ;  mount | grep securebackup ; echo ; fortune",
+  "cmd_open": "echo -n \"PASSPHRASE\" | sudo cryptsetup luksOpen /dev/sda1 securebackup --tries 1",
+  "cmd_dryopen": "echo -n \"PASSPHRASE\" | sudo cryptsetup luksOpen /dev/sda1 securebackup --tries 1 --test-passphrase",
+  "cmd_mount": "sudo mount /dev/mapper/securebackup /secure",
+  "cmd_drymount": "sudo mount -f /dev/mapper/securebackup /secure",
+  "port": "8080",
+  "interface": "127.0.0.1",
+}
