@@ -16,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 
 var retries = 1
 
+// Read Configuration
+
 // Setup Handlebar Views
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -49,7 +51,7 @@ app.get('/', (request, response) => {
 
 // Process SUCCESS request
 app.get('/success', (request, response) => {
-    var cmd = config.cmd_success
+    var cmd = config.get("cmd_success")
 
     var output
     //console.log("retries should be 0, but they're = ", retries)
@@ -77,12 +79,12 @@ app.post('/exec', function(req, res) {
     var cmd_mount
 
     if (mounted()) {
-        cmd_open = config.cmd_dryopen.replace("PASSPHRASE", p)
-        cmd_mount = config.cmd_drymount
+        cmd_open = config.get("cmd_dryopen").replace("PASSPHRASE", p)
+        cmd_mount = config.get("cmd_drymount")
     }
     else {
-        cmd_open = config.cmd_open.replace("PASSPHRASE", p)
-        cmd_mount = config.cmd_mount
+        cmd_open = config.get("cmd_open").replace("PASSPHRASE", p)
+        cmd_mount = config.get("cmd_mount")
     }
 
     //console.log("before exec")
@@ -110,13 +112,13 @@ app.post('/exec', function(req, res) {
 pushthis("Offsite: Starting")
 
 // Bind to interface
-app.listen(config.port, config.interface)
+app.listen(config.get("port"), config.get("interface"))
 
 // Push to Pushover
 function pushthis(message, title) {
     var p = new push({
-        user: config.get(pushover-user),
-        token: config.pushover-token,
+        user: config.get("pushover-user"),
+        token: config.get("pushover-token"),
         // onerror: function(error) {},
         // update_sounds: true // update the list of sounds every day - will
         // prevent app from exiting.
