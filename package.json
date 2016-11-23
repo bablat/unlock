@@ -1,8 +1,8 @@
 {
   "name": "unlock",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "unlock my fs",
+  "main": "unlock.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
