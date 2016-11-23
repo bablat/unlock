@@ -63,7 +63,6 @@ app.route({
  
 app.post('/exec', function(req, res) {
     var p = req.body.passphrase
-
     var cmd = "echo -n \"" + p + "\" | sudo cryptsetup luksOpen /dev/sda1 securebackup --tries 1"
     cmd2 = "sudo mount /dev/mapper/securebackup /secure";
     if (mounted()) {
