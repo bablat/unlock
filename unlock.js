@@ -74,6 +74,8 @@ app.get('/success', (request, response) => {
 //Process form POST
 app.post('/exec', function(req, res) {
 
+    debugger;
+
     var p = req.body.passphrase
     var cmd_open
     var cmd_mount
