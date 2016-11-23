@@ -28,7 +28,7 @@ app.get('/', (request, response) => {
     response.render('login', { title: "Enter Passphrase" });
   }
   else {
-    response.render('login', { title: "Incorrect Passphrase, Try Again? (attempts = " + (retries-1) + ")" });
+    response.render('login', { title: "Incorrect Passphrase, attempts: " + (retries-1)});
   }
 })
 
@@ -99,7 +99,7 @@ app.post('/exec', function(req, res) {
   }
 );
 
-app.listen(3000);
+app.listen(8080, 'localhost');
 
 function pushthis(message, title) {
   var p = new push( {
