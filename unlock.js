@@ -76,11 +76,11 @@ app.post('/exec', function(req, res) {
 	if (!error) {
 	  exec(cmd2, function callback(error, stdout, stderr){
 	    console.log("executing: [" + cmd2 + "]");
+	    retries = 0;
+	    pushthis("Success!", "Offsite: Password Accepted");
+	    console.log("redirecting to success page");
+	    res.redirect("/success");
 	  });
-	  retries = 0;
-	  pushthis("Success!", "Offsite: Password Accepted");
-	  console.log("redirecting to success page");
-	  res.redirect("/success");
 	}
 	else {
 	  retries += 1;
@@ -92,6 +92,9 @@ app.post('/exec', function(req, res) {
 
   }
 );
+
+
+pushthis("Offsite: Starting");
 
 app.listen(8080, '127.0.0.1');
 
