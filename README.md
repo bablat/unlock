@@ -6,7 +6,7 @@ This package includes the interface that allows me to enter the password wheneve
 
 I leave this running at a friend's house, nobody can login to this machine even if they're connected to the network as it's not running any services listening other than SSH, and if disconnected from power the disk is encrypted.
 
-I use [Syncthing](https://syncthing.net/) to syncronize my photos and other stuff from all of my other machines.
+I use [Syncthing](https://syncthing.net/) to syncronize my photos and other stuff from all of my other machines. It's great in indexing content and very traffic efficient considering the amount of data I sync.
 
 ## General Sequence:
 
@@ -17,7 +17,7 @@ I use [Syncthing](https://syncthing.net/) to syncronize my photos and other stuf
 1. Push notification is sent
 1. I connect and enter the correct password
 1. Encrypted LUKS volume is mounted
-1. Syncthing can now begin sharing this folder over the OpenVPN interface
+1. Syncthing can now begin synchonizing this folder over the OpenVPN interface
 
 Very cheap setup, at the price of an external USB HDD and a RPi.
 
