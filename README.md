@@ -1,14 +1,15 @@
 # Unlock
 
-I'm running an offsite backup box that's essentially a raspberry pi 3 running raspbian, that connects to my house using certificate-based OpenVPN, prompts for a password on a clean nodejs app, then mounts my encrypted LUKS filesystem. It also send me Pushover notifications whenever an attempt is made.
+I'm running an offsite backup box that's essentially a Raspberry Pi 3 running Raspbian, that connects to my house using certificate-based OpenVPN, prompts for a password on a clean nodejs app, then mounts my encrypted LUKS filesystem. It also send me [Pushover](https://pushover.net/) notifications whenever an attempt is made.
 
 This package includes the interface that allows me to enter the password whenever the system reboots for whatever reason.
 
 I leave this running at a friend's house, nobody can login to this machine even if they're connected to the network as it's not running any services listening other than SSH, and if disconnected from power the disk is encrypted.
 
-I use Syncthing to syncronize my photos and other stuff from all of my other machines.
+I use [Syncthing](https://syncthing.net/) to syncronize my photos and other stuff from all of my other machines.
 
-General Sequence:
+## General Sequence:
+
 1. Rasbian boots
 1. OpenVPN dials home
 1. pm2 runs this module
