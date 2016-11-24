@@ -58,7 +58,7 @@ app.get('/success', (request, response) => {
     if (retries == 0) {
         exec(cmd, function callback(error, stdout, stderr) {
             //console.log("out:", stdout, "err:", stderr)
-            output = "Dry Run: " + mounted() + "\n\n" + stdout + stderr
+            //output = "Dry Run: " + mounted() + "\n\n" + stdout + stderr
             //console.log("output is now: " + output)
             retries += 1
             pushthis(output, "Offsite: Success Page")
